@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [v6r8p23]
 
 FIX: included fixes from v6r7p37 patch release
@@ -231,6 +232,32 @@ BUGFIX: ResourceStatus, RSSCacheNoThread - ensure that locks are always released
 FIX: TaskManager - site in the job definition is taken into account when submitting
 NEW: Transformation - get the allowed plugins from the CS /Operations/Transformations/AllowedPlugins
 FIX: ValidateOutputDataAgent - self not needed for static methods
+=======
+[v6r7p39]
+
+*Core
+CHANGE: Grid - in executeGridCommand() allow environment script with arguments needed for ARC client
+
+*DMS
+FIX: DFC SEManager - DIP Storage can have a list of ports now
+
+*Resources
+FIX: ARCComputingElement - few fixes after debugging
+
+[v6r7p38]
+
+*Core
+NEW: DISET FileHelper, TransferClient - possibility to switch off check sum
+
+*Resources
+NEW: ARCComputingElement - first version
+NEW: StorageFactory - possibility to pass extra protocol parameters to storage object
+NEW: DIPStorage - added CheckSum configuration option
+BUGFIX: SSHComputingElement - use CE name in the pilot reference construction
+
+*WMS
+FIX: StalledJobAgent - if ExecTime < CPUTime make it equal to CPUTime
+>>>>>>> upstream/rel-v6r7
 
 [v6r7p37]
 
