@@ -1,4 +1,21 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+[v6r8p24]
+
+FIX: included fixes from v6r7p39 patch release
+
+*Core
+FIX: SiteSEMapping was returning wrong info
+
+*DMS
+FIX: FTSRequest - choose explicitly target FTS point for RAL and CERN
+BUGFIX: StrategyHandler - wrong return value in __getRWAccessForSE()
+
+*Resources
+CHANGE: SRM2Storage - do not account gfal_ls operations any more
+
+>>>>>>> upstream/rel-v6r8
 [v6r8p23]
 
 FIX: included fixes from v6r7p37 patch release
@@ -232,7 +249,7 @@ BUGFIX: ResourceStatus, RSSCacheNoThread - ensure that locks are always released
 FIX: TaskManager - site in the job definition is taken into account when submitting
 NEW: Transformation - get the allowed plugins from the CS /Operations/Transformations/AllowedPlugins
 FIX: ValidateOutputDataAgent - self not needed for static methods
-=======
+
 [v6r7p39]
 
 *Core
@@ -257,7 +274,10 @@ BUGFIX: SSHComputingElement - use CE name in the pilot reference construction
 
 *WMS
 FIX: StalledJobAgent - if ExecTime < CPUTime make it equal to CPUTime
+<<<<<<< HEAD
 >>>>>>> upstream/rel-v6r7
+=======
+>>>>>>> upstream/rel-v6r8
 
 [v6r7p37]
 
