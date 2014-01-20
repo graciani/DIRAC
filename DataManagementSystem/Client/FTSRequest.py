@@ -946,11 +946,11 @@ class FTSRequest( object ):
       return S_ERROR( "Source SE not set" )
     if not self.targetSE:
       return S_ERROR( "Target SE not set" )
-    res = getSitesForSE( self.sourceSE, 'LCG' )
+    res = getSitesForSE( self.sourceSE )
     if not res['OK'] or not res['Value']:
       return S_ERROR( "Could not determine source site" )
     sourceSite = res['Value'][0]
-    res = getSitesForSE( self.targetSE, 'LCG' )
+    res = getSitesForSE( self.targetSE )
     if not res['OK'] or not res['Value']:
       return S_ERROR( "Could not determine target site" )
     targetSite = res['Value'][0]
