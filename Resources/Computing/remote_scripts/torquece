@@ -62,24 +62,25 @@ def getCEStatus( user ):
 
 # Get standard arguments and pass to the interface implementation functions
 
-command = sys.argv[1]
-print "============= Start output ==============="
-if command == "submit_job":
-  executable,outputDir,errorDir,workDir,nJobs,infoDir,jobStamps,queue,submitOptions = sys.argv[2:]
-  submitOptions = urllib.unquote(submitOptions)
-  if submitOptions == '-':
-    submitOptions = ''
-  status = submitJob( executable, outputDir, errorDir, nJobs, outputDir, queue, submitOptions )
-elif command == "kill_job":
-  jobStamps,infoDir = sys.argv[2:]
-  jobList = jobStamps.split('#')
-  status = killJob( jobList )
-elif command == "job_status":
-  jobStamps,infoDir,user = sys.argv[2:]
-  jobList = jobStamps.split('#')
-  status = getJobStatus( jobList, user )  
-elif command == "status_info":
-  infoDir,workDir,user,queue = sys.argv[2:]
-  status = getCEStatus( user )   
-
-sys.exit(status)
+if __name__ == '__main__':
+  command = sys.argv[1]
+  print "============= Start output ==============="
+  if command == "submit_job":
+    executable,outputDir,errorDir,workDir,nJobs,infoDir,jobStamps,queue,submitOptions = sys.argv[2:]
+    submitOptions = urllib.unquote(submitOptions)
+    if submitOptions == '-':
+      submitOptions = ''
+    status = submitJob( executable, outputDir, errorDir, nJobs, outputDir, queue, submitOptions )
+  elif command == "kill_job":
+    jobStamps,infoDir = sys.argv[2:]
+    jobList = jobStamps.split('#')
+    status = killJob( jobList )
+  elif command == "job_status":
+    jobStamps,infoDir,user = sys.argv[2:]
+    jobList = jobStamps.split('#')
+    status = getJobStatus( jobList, user )  
+  elif command == "status_info":
+    infoDir,workDir,user,queue = sys.argv[2:]
+    status = getCEStatus( user )   
+  
+  sys.exit(status)
